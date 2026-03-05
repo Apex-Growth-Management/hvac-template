@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
@@ -42,15 +43,27 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="bg-black text-white pt-24 min-h-screen">
+      {/* Hero banner */}
+      <section className="relative h-64 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80&fit=crop"
+          alt="HVAC service"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/75 flex flex-col items-center justify-center text-center px-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-3">Our Services</h1>
+          <p className="text-white/60 text-lg max-w-xl">
+            Complete heating and cooling solutions for homes and businesses.
+          </p>
+        </div>
+      </section>
+
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Our Services</h1>
-            <p className="text-white/50 text-lg max-w-xl mx-auto">
-              Complete heating and cooling solutions for homes and businesses.
-            </p>
-          </div>
+          <div className="mb-16">
 
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((s) => (
               <div

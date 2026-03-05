@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const values = [
   {
@@ -23,37 +24,54 @@ export default function AboutPage() {
   return (
     <main className="bg-black text-white pt-24 min-h-screen">
       {/* Hero */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-32 px-6 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1920&q=80&fit=crop"
+          alt="HVAC technician"
+          fill
+          className="object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-black/75" />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             About <span className="text-red-500">Arctic Air</span>
           </h1>
-          <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            We've been keeping homes and businesses comfortable for over 15 years. Locally owned, locally operated — we treat every customer like a neighbor.
+          <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl">
+            We&apos;ve been keeping homes and businesses comfortable for over 15 years. Locally owned, locally operated — we treat every customer like a neighbor.
           </p>
         </div>
       </section>
 
       {/* Story */}
-      <section className="py-16 px-6 bg-white/[0.02]">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-red-400">Our Story</h2>
-          <div className="text-white/60 leading-relaxed space-y-4 text-lg">
-            <p>
-              Arctic Air HVAC was founded with a simple mission: provide honest, reliable HVAC service at a fair price. No upsells, no scare tactics — just quality work done right.
-            </p>
-            <p>
-              We started as a two-man operation and have grown into a full team of certified technicians serving hundreds of customers across the area. But we've never lost the small-business values that got us here.
-            </p>
-            <p>
-              When you call Arctic Air, you get a real person, a real technician at your door, and real results.
-            </p>
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-red-400">Our Story</h2>
+            <div className="text-white/60 leading-relaxed space-y-4 text-lg">
+              <p>
+                Arctic Air HVAC was founded with a simple mission: provide honest, reliable HVAC service at a fair price. No upsells, no scare tactics — just quality work done right.
+              </p>
+              <p>
+                We started as a two-man operation and have grown into a full team of certified technicians serving hundreds of customers across the area. But we&apos;ve never lost the small-business values that got us here.
+              </p>
+              <p>
+                When you call Arctic Air, you get a real person, a real technician at your door, and real results.
+              </p>
+            </div>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden h-80">
+            <Image
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&fit=crop"
+              alt="Technician working"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-white/[0.02] border-y border-white/10">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">What We Stand For</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -70,8 +88,23 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Full-width photo quote */}
+      <section className="relative h-64 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80&fit=crop"
+          alt="HVAC equipment"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/75 flex items-center justify-center">
+          <p className="text-2xl md:text-4xl font-extrabold text-center max-w-xl px-6">
+            &ldquo;Fix it right. <span className="text-red-500">Fix it once.</span>&rdquo;
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-16 px-6 text-center">
+      <section className="py-20 px-6 text-center">
         <h3 className="text-2xl font-bold mb-4">Ready to work with us?</h3>
         <p className="text-white/50 mb-8">Get a free quote today — no obligation.</p>
         <Link
