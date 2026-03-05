@@ -90,6 +90,7 @@ export default function Home() {
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
+            <p className="text-red-600 text-sm font-semibold uppercase tracking-widest mb-3">Our Services</p>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">What We Do</h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">
               From installs to emergency repairs — we handle it all.
@@ -127,6 +128,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/80" />
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+          <p className="text-red-400 text-sm font-semibold uppercase tracking-widest mb-3">Why Us</p>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Why Choose Arctic Air?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">
             {[
@@ -155,6 +157,7 @@ export default function Home() {
             />
           </div>
           <div>
+            <p className="text-red-600 text-sm font-semibold uppercase tracking-widest mb-3">About Us</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Local Technicians.<br />
               <span className="text-red-600">Real Results.</span>
@@ -197,9 +200,23 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      <footer className="border-t border-gray-200 py-8 px-6 text-center text-gray-400 text-sm bg-gray-50">
-        © {new Date().getFullYear()} Arctic Air HVAC. All rights reserved.
+      <footer className="border-t border-gray-200 py-10 px-6 bg-white">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+          <div>
+            <p className="font-bold text-lg"><span className="text-red-600">Arctic Air</span><span className="text-gray-900"> HVAC</span></p>
+            <p className="text-gray-400 text-xs mt-1">© {new Date().getFullYear()} All rights reserved.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-gray-400">
+            <a href="tel:5550000000" className="hover:text-gray-600 transition-colors">(555) 000-0000</a>
+            <span className="hidden sm:inline text-gray-200">·</span>
+            <span>Your City, ST 00000</span>
+          </div>
+          <div className="flex gap-6 text-gray-400">
+            <a href="/services" className="hover:text-gray-600 transition-colors">Services</a>
+            <a href="/about" className="hover:text-gray-600 transition-colors">About</a>
+            <a href="/contact" className="hover:text-gray-600 transition-colors">Contact</a>
+          </div>
+        </div>
       </footer>
     </main>
   );
