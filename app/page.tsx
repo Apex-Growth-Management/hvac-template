@@ -1,24 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Snowflake, Flame, Wrench, AlertCircle } from "lucide-react";
 
 const services = [
   {
-    icon: "❄️",
+    Icon: Snowflake,
     title: "AC Installation",
     description: "New system installs done right the first time. We size and install units for maximum efficiency.",
   },
   {
-    icon: "🔥",
+    Icon: Flame,
     title: "Heating Repair",
     description: "Furnace or heat pump not working? We diagnose and fix all makes and models fast.",
   },
   {
-    icon: "🔧",
+    Icon: Wrench,
     title: "Maintenance Plans",
     description: "Regular tune-ups keep your system running longer and your energy bills lower.",
   },
   {
-    icon: "🚨",
+    Icon: AlertCircle,
     title: "24/7 Emergency",
     description: "HVAC emergencies don't wait. Neither do we. Call anytime, day or night.",
   },
@@ -33,7 +34,7 @@ const stats = [
 
 export default function Home() {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-white text-gray-900">
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col justify-center px-6 pt-16 overflow-hidden">
         <Image
@@ -49,7 +50,7 @@ export default function Home() {
           <div className="inline-block bg-red-600/20 border border-red-500/30 text-red-400 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
             24/7 Emergency Service Available
           </div>
-          <h1 className="text-5xl md:text-8xl font-extrabold leading-tight mb-6 max-w-3xl">
+          <h1 className="text-5xl md:text-8xl font-extrabold leading-tight mb-6 max-w-3xl text-white">
             Heating &<br />Cooling<br />
             <span className="text-red-500">You Can Count On.</span>
           </h1>
@@ -74,12 +75,12 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 px-6 border-y border-white/10 bg-white/[0.02]">
+      <section className="py-16 px-6 border-y border-gray-200 bg-gray-50">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((s) => (
             <div key={s.label}>
-              <div className="text-3xl md:text-4xl font-extrabold text-red-500 mb-1">{s.value}</div>
-              <div className="text-white/50 text-sm">{s.label}</div>
+              <div className="text-3xl md:text-4xl font-extrabold text-red-600 mb-1">{s.value}</div>
+              <div className="text-gray-500 text-sm">{s.label}</div>
             </div>
           ))}
         </div>
@@ -90,24 +91,26 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">What We Do</h2>
-            <p className="text-white/50 text-lg max-w-xl mx-auto">
+            <p className="text-gray-500 text-lg max-w-xl mx-auto">
               From installs to emergency repairs — we handle it all.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((s) => (
+            {services.map(({ Icon, title, description }) => (
               <div
-                key={s.title}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-red-500/50 hover:bg-red-600/5 transition-all"
+                key={title}
+                className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:border-red-300 hover:bg-red-50 transition-all"
               >
-                <div className="text-3xl mb-4">{s.icon}</div>
-                <h3 className="text-lg font-semibold mb-2">{s.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{s.description}</p>
+                <div className="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                  <Icon className="w-5 h-5 text-red-600" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link href="/services" className="text-red-400 hover:text-red-300 font-medium transition-colors">
+            <Link href="/services" className="text-red-600 hover:text-red-500 font-medium transition-colors">
               See all services →
             </Link>
           </div>
@@ -123,7 +126,7 @@ export default function Home() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/80" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Why Choose Arctic Air?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">
             {[
@@ -133,7 +136,7 @@ export default function Home() {
             ].map((item) => (
               <div key={item.title} className="border border-white/10 bg-white/5 backdrop-blur rounded-2xl p-6">
                 <h3 className="text-lg font-semibold text-red-400 mb-2">{item.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -141,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* Technician photo section */}
-      <section className="py-24 px-6 bg-white/[0.02]">
+      <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="relative rounded-2xl overflow-hidden h-96">
             <Image
@@ -154,15 +157,15 @@ export default function Home() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Local Technicians.<br />
-              <span className="text-red-500">Real Results.</span>
+              <span className="text-red-600">Real Results.</span>
             </h2>
-            <p className="text-white/60 leading-relaxed mb-4">
+            <p className="text-gray-600 leading-relaxed mb-4">
               Every technician on our team is NATE-certified, background checked, and trained to handle any HVAC system on the market. When we show up, we fix it right the first time.
             </p>
-            <p className="text-white/60 leading-relaxed mb-8">
-              We've been serving this community for over 15 years and we plan to be here for 15 more.
+            <p className="text-gray-600 leading-relaxed mb-8">
+              We&apos;ve been serving this community for over 15 years and we plan to be here for 15 more.
             </p>
-            <Link href="/about" className="text-red-400 hover:text-red-300 font-medium transition-colors">
+            <Link href="/about" className="text-red-600 hover:text-red-500 font-medium transition-colors">
               Learn more about us →
             </Link>
           </div>
@@ -178,12 +181,12 @@ export default function Home() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/80" />
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
+        <div className="relative z-10 max-w-3xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Need HVAC service<br />
             <span className="text-red-500">right now?</span>
           </h2>
-          <p className="text-white/50 text-lg mb-10">
+          <p className="text-white/60 text-lg mb-10">
             We&apos;re available 24/7 for emergency repairs. Get a free quote today.
           </p>
           <Link
@@ -195,7 +198,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 py-8 px-6 text-center text-white/30 text-sm">
+      <footer className="border-t border-gray-200 py-8 px-6 text-center text-gray-400 text-sm bg-gray-50">
         © {new Date().getFullYear()} Arctic Air HVAC. All rights reserved.
       </footer>
     </main>

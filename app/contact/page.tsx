@@ -24,95 +24,99 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="bg-black text-white pt-24 min-h-screen">
+    <main className="bg-white text-gray-900 pt-24 min-h-screen">
       <section className="py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Get a Free Quote</h1>
-            <p className="text-white/50 text-lg">
-              Fill out the form and we'll get back to you within a few hours.
+            <p className="text-gray-500 text-lg">
+              Fill out the form and we&apos;ll get back to you within a few hours.
             </p>
           </div>
 
           {/* Emergency banner */}
-          <div className="bg-red-600/20 border border-red-500/40 rounded-2xl p-4 mb-8 text-center">
-            <p className="text-red-300 font-semibold">🚨 HVAC Emergency? Call us now: <span className="text-white">(555) 000-0000</span></p>
+          <div className="bg-red-50 border border-red-200 rounded-2xl p-4 mb-8 text-center">
+            <p className="text-red-700 font-semibold">HVAC Emergency? Call us now: <span className="text-gray-900">(555) 000-0000</span></p>
           </div>
 
           {status === "success" ? (
             <div className="text-center py-16">
-              <div className="text-5xl mb-4">✅</div>
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
               <h2 className="text-2xl font-bold mb-2">Request Received!</h2>
-              <p className="text-white/50">We'll get back to you within a few hours.</p>
+              <p className="text-gray-500">We&apos;ll get back to you within a few hours.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <div className="flex flex-col sm:flex-row gap-5">
                 <div className="flex-1 flex flex-col gap-2">
-                  <label className="text-sm text-white/60 font-medium">First Name</label>
+                  <label className="text-sm text-gray-600 font-medium">First Name</label>
                   <input
                     name="firstName" value={form.firstName} onChange={handleChange} required
                     type="text" placeholder="John"
-                    className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-red-500 transition-colors"
+                    className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-400 transition-colors"
                   />
                 </div>
                 <div className="flex-1 flex flex-col gap-2">
-                  <label className="text-sm text-white/60 font-medium">Last Name</label>
+                  <label className="text-sm text-gray-600 font-medium">Last Name</label>
                   <input
                     name="lastName" value={form.lastName} onChange={handleChange} required
                     type="text" placeholder="Smith"
-                    className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-red-500 transition-colors"
+                    className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-400 transition-colors"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-5">
                 <div className="flex-1 flex flex-col gap-2">
-                  <label className="text-sm text-white/60 font-medium">Email</label>
+                  <label className="text-sm text-gray-600 font-medium">Email</label>
                   <input
                     name="email" value={form.email} onChange={handleChange} required
                     type="email" placeholder="john@example.com"
-                    className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-red-500 transition-colors"
+                    className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-400 transition-colors"
                   />
                 </div>
                 <div className="flex-1 flex flex-col gap-2">
-                  <label className="text-sm text-white/60 font-medium">Phone</label>
+                  <label className="text-sm text-gray-600 font-medium">Phone</label>
                   <input
                     name="phone" value={form.phone} onChange={handleChange}
                     type="tel" placeholder="(555) 000-0000"
-                    className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-red-500 transition-colors"
+                    className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-400 transition-colors"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-sm text-white/60 font-medium">Service Needed</label>
+                <label className="text-sm text-gray-600 font-medium">Service Needed</label>
                 <select
                   name="service" value={form.service} onChange={handleChange}
-                  className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-500 transition-colors"
+                  className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-red-400 transition-colors"
                 >
-                  <option value="" className="bg-black">Select a service</option>
-                  <option value="AC Installation" className="bg-black">AC Installation</option>
-                  <option value="AC Repair" className="bg-black">AC Repair</option>
-                  <option value="Heating Repair" className="bg-black">Heating Repair</option>
-                  <option value="Heating Installation" className="bg-black">Heating Installation</option>
-                  <option value="Maintenance Plan" className="bg-black">Maintenance Plan</option>
-                  <option value="Emergency Service" className="bg-black">Emergency Service</option>
-                  <option value="Other" className="bg-black">Other</option>
+                  <option value="">Select a service</option>
+                  <option value="AC Installation">AC Installation</option>
+                  <option value="AC Repair">AC Repair</option>
+                  <option value="Heating Repair">Heating Repair</option>
+                  <option value="Heating Installation">Heating Installation</option>
+                  <option value="Maintenance Plan">Maintenance Plan</option>
+                  <option value="Emergency Service">Emergency Service</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-sm text-white/60 font-medium">Describe the Issue</label>
+                <label className="text-sm text-gray-600 font-medium">Describe the Issue</label>
                 <textarea
                   name="message" value={form.message} onChange={handleChange} required
                   rows={5} placeholder="Tell us what's going on with your system..."
-                  className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-red-500 transition-colors resize-none"
+                  className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-400 transition-colors resize-none"
                 />
               </div>
 
               {status === "error" && (
-                <p className="text-red-400 text-sm text-center">Something went wrong. Please try again or call us directly.</p>
+                <p className="text-red-600 text-sm text-center">Something went wrong. Please try again or call us directly.</p>
               )}
 
               <button
@@ -124,16 +128,16 @@ export default function ContactPage() {
             </form>
           )}
 
-          <p className="text-center text-white/30 text-sm mt-8">
+          <p className="text-center text-gray-400 text-sm mt-8">
             Or email us at{" "}
-            <a href="mailto:info@arcticairhvac.com" className="text-red-400 hover:text-red-300 transition-colors">
+            <a href="mailto:info@arcticairhvac.com" className="text-red-600 hover:text-red-500 transition-colors">
               info@arcticairhvac.com
             </a>
           </p>
         </div>
       </section>
 
-      <footer className="border-t border-white/10 py-8 px-6 text-center text-white/30 text-sm">
+      <footer className="border-t border-gray-200 py-8 px-6 text-center text-gray-400 text-sm bg-gray-50">
         © {new Date().getFullYear()} Arctic Air HVAC. All rights reserved.
       </footer>
     </main>
