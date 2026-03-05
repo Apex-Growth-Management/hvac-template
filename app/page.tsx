@@ -34,20 +34,20 @@ export default function Home() {
   return (
     <main className="bg-black text-white">
       {/* Hero */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-red-950/20 to-transparent pointer-events-none" />
-        <div className="max-w-4xl mx-auto relative">
+      <section className="min-h-screen flex flex-col justify-center px-6 pt-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-red-950/30 to-transparent pointer-events-none" />
+        <div className="max-w-6xl mx-auto w-full relative">
           <div className="inline-block bg-red-600/20 border border-red-500/30 text-red-400 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
             24/7 Emergency Service Available
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
-            Heating & Cooling<br />
+          <h1 className="text-5xl md:text-8xl font-extrabold leading-tight mb-6 max-w-3xl">
+            Heating &<br />Cooling<br />
             <span className="text-red-500">You Can Count On.</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-white/60 max-w-xl mb-10">
             Arctic Air HVAC provides fast, reliable heating and cooling services for homes and businesses. Licensed, insured, and available around the clock.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
               className="bg-red-600 hover:bg-red-500 text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors"

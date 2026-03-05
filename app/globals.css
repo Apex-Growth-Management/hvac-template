@@ -14,3 +14,9 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+h1, h2, h3 {
+  font-family: var(--font-oswald), Arial, sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}

@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 const geist = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
 });
 
@@ -20,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} antialiased bg-black text-white`}>
+      <body className={`${geist.variable} ${oswald.variable} antialiased bg-black text-white`}>
         <Navbar />
         {children}
       </body>
