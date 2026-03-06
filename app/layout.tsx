@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { SanityLive } from "@/sanity/lib/live";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className={`${geist.variable} ${oswald.variable} antialiased bg-black text-white`}>
         <Navbar />
         {children}
+        <SanityLive />
       </body>
     </html>
   );
