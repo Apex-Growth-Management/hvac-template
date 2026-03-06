@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Snowflake, Flame, Thermometer, Wrench, Wind, AlertCircle } from "lucide-react";
+import FadeIn from "@/components/FadeIn";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description: "Complete HVAC services including AC installation, heating repair, maintenance plans, indoor air quality, and 24/7 emergency service.",
+  openGraph: {
+    title: "HVAC Services | Arctic Air HVAC",
+    description: "Full-service heating and cooling for residential and commercial properties. Same-day availability, upfront pricing.",
+  },
+};
 
 const services = [
   {
@@ -45,7 +56,7 @@ export default function ServicesPage() {
   return (
     <main className="bg-white text-gray-900 pt-24 min-h-screen">
       {/* Hero banner */}
-      <section className="relative h-64 overflow-hidden">
+      <section className="relative h-72 overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80&fit=crop"
           alt="HVAC service"
@@ -53,52 +64,55 @@ export default function ServicesPage() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/75 flex flex-col items-center justify-center text-center px-6">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-3 text-white">Our Services</h1>
-          <p className="text-white/60 text-lg max-w-xl">
-            Complete heating and cooling solutions for homes and businesses.
-          </p>
+          <FadeIn>
+            <p className="text-red-400 text-sm font-semibold uppercase tracking-widest mb-3">What We Offer</p>
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-3 text-white">Our Services</h1>
+            <p className="text-white/60 text-lg max-w-xl">
+              Complete heating and cooling solutions for homes and businesses.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map(({ Icon, title, description, features }) => (
-              <div
-                key={title}
-                className="border border-gray-200 bg-gray-50 rounded-2xl p-8 hover:border-red-300 transition-colors"
-              >
-                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-red-600" />
+            {services.map(({ Icon, title, description, features }, i) => (
+              <FadeIn key={title} delay={(i % 2) * 120}>
+                <div className="border border-gray-200 bg-gray-50 rounded-2xl p-8 hover:border-red-300 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full">
+                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-5">
+                    <Icon className="w-6 h-6 text-red-600" />
+                  </div>
+                  <h2 className="text-xl font-bold mb-3">{title}</h2>
+                  <p className="text-gray-600 leading-relaxed mb-6">{description}</p>
+                  <ul className="flex flex-wrap gap-2">
+                    {features.map((f) => (
+                      <li key={f} className="bg-red-50 border border-red-200 text-red-700 text-sm px-3 py-1 rounded-full">
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h2 className="text-xl font-bold mb-3">{title}</h2>
-                <p className="text-gray-600 leading-relaxed mb-6">{description}</p>
-                <ul className="flex flex-wrap gap-2">
-                  {features.map((f) => (
-                    <li
-                      key={f}
-                      className="bg-red-50 border border-red-200 text-red-700 text-sm px-3 py-1 rounded-full"
-                    >
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </FadeIn>
             ))}
           </div>
 
-          <div className="text-center mt-20">
-            <h3 className="text-2xl font-bold mb-4">Ready to schedule service?</h3>
-            <Link
-              href="/contact"
-              className="bg-red-600 hover:bg-red-500 text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors"
-            >
-              Get a Free Quote
-            </Link>
-          </div>
+          <FadeIn>
+            <div className="text-center mt-20 bg-gray-50 border border-gray-200 rounded-3xl py-16 px-6">
+              <h3 className="text-2xl font-bold mb-3">Not sure what you need?</h3>
+              <p className="text-gray-500 mb-8 max-w-md mx-auto">Tell us what&apos;s going on and we&apos;ll diagnose the problem and give you a free, no-obligation quote.</p>
+              <Link
+                href="/contact"
+                className="inline-block bg-red-600 hover:bg-red-500 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/25"
+              >
+                Get a Free Quote
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
-      <footer className="border-t border-gray-200 py-10 px-6 bg-white">
+
+      <footer className="border-t border-gray-200 py-10 px-6 bg-white pb-24 md:pb-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
           <div>
             <p className="font-bold text-lg"><span className="text-red-600">Arctic Air</span><span className="text-gray-900"> HVAC</span></p>

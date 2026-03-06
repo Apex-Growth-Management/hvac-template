@@ -3,6 +3,7 @@ import { Geist, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { SanityLive } from "@/sanity/lib/live";
+import StickyCallBar from "@/components/StickyCallBar";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,19 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Arctic Air HVAC | Heating & Cooling Experts",
+  title: {
+    template: "%s | Arctic Air HVAC",
+    default: "Arctic Air HVAC | Heating & Cooling Experts",
+  },
   description: "Professional heating, cooling, and HVAC services. Available 24/7 for emergency repairs. Serving the local area with fast, reliable service.",
+  openGraph: {
+    siteName: "Arctic Air HVAC",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
@@ -29,6 +41,7 @@ export default function RootLayout({
       <body className={`${geist.variable} ${oswald.variable} antialiased bg-black text-white`}>
         <Navbar />
         {children}
+        <StickyCallBar />
         <SanityLive />
       </body>
     </html>

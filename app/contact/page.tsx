@@ -1,5 +1,6 @@
 "use client";
 
+import type { Metadata } from "next";
 import { useState } from "react";
 
 export default function ContactPage() {
@@ -28,6 +29,7 @@ export default function ContactPage() {
       <section className="py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
+            <p className="text-red-600 text-sm font-semibold uppercase tracking-widest mb-3">Free Quote</p>
             <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Get a Free Quote</h1>
             <p className="text-gray-500 text-lg">
               Fill out the form and we&apos;ll get back to you within a few hours.
@@ -36,7 +38,7 @@ export default function ContactPage() {
 
           {/* Emergency banner */}
           <div className="bg-red-50 border border-red-200 rounded-2xl p-4 mb-8 text-center">
-            <p className="text-red-700 font-semibold">HVAC Emergency? Call us now: <span className="text-gray-900">(555) 000-0000</span></p>
+            <p className="text-red-700 font-semibold">HVAC Emergency? Call us now: <a href="tel:5550000000" className="text-gray-900 hover:underline">(555) 000-0000</a></p>
           </div>
 
           {status === "success" ? (
@@ -121,7 +123,7 @@ export default function ContactPage() {
 
               <button
                 type="submit" disabled={status === "sending"}
-                className="bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white font-semibold py-4 rounded-full text-lg transition-colors mt-2"
+                className="bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white font-semibold py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/25 mt-2"
               >
                 {status === "sending" ? "Sending..." : "Request a Quote"}
               </button>
@@ -136,7 +138,8 @@ export default function ContactPage() {
           </p>
         </div>
       </section>
-      <footer className="border-t border-gray-200 py-10 px-6 bg-white">
+
+      <footer className="border-t border-gray-200 py-10 px-6 bg-white pb-24 md:pb-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
           <div>
             <p className="font-bold text-lg"><span className="text-red-600">Arctic Air</span><span className="text-gray-900"> HVAC</span></p>
