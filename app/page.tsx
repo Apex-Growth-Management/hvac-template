@@ -84,7 +84,7 @@ export default async function Home() {
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col justify-center px-6 pt-16 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1581094794329-c8112c4e4c50?w=1920&q=80&fit=crop"
+          src="https://images.unsplash.com/photo-1567974497852-36e8cd46d34e?w=1920&q=80&fit=crop"
           alt="HVAC technician at work"
           fill
           className="object-cover object-center"
@@ -208,7 +208,7 @@ export default async function Home() {
       {/* Why Us */}
       <section className="relative py-24 px-6 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1567974497852-36e8cd46d34e?w=1920&q=80&fit=crop"
+          src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1920&q=80&fit=crop"
           alt="HVAC unit"
           fill
           className="object-cover"
