@@ -37,7 +37,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1581094480725-f6b631d46a71?w=1920&q=80&fit=crop"
+          src="https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?w=1920&q=80&fit=crop"
           alt="HVAC technician"
           fill
           className="object-cover object-top"
