@@ -84,7 +84,7 @@ export default async function Home() {
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col justify-center px-6 pt-16 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1567974497852-36e8cd46d34e?w=1920&q=80&fit=crop"
+          src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1920&q=80&fit=crop"
           alt="HVAC technician at work"
           fill
           className="object-cover object-center"
@@ -242,7 +242,7 @@ export default async function Home() {
           <FadeIn>
             <div className="relative rounded-2xl overflow-hidden h-96 shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?w=800&q=80&fit=crop"
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&fit=crop"
                 alt="HVAC repair work"
                 fill
                 className="object-cover"
